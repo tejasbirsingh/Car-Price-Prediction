@@ -18,12 +18,12 @@ def Home():
 standard_to = StandardScaler()
 
 
-@app.route("/predict", methods=['POST'])
+@app.route("/predict", methods=['GET', 'POST'])
 
 def predict():
     Fuel_Type_Diesel = 0
     if request.method == 'POST':
-        Year = int(request.form['Year'])
+        Year = int(request.form['year'])
         Present_Price = float(request.form['Present_Price'])
         Kms_Driven = int(request.form['Kms_Driven'])
         Kms_Driven2 = np.log(Kms_Driven)
