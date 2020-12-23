@@ -23,7 +23,7 @@ def api():
 standard_to = StandardScaler()
 
 
-<<<<<<< HEAD
+
 @app.route("/predictapi", methods=['GET', 'POST'])
 
 def predictapi():
@@ -65,8 +65,7 @@ def predictapi():
     else:
         return render_template('index.html')
 
-=======
->>>>>>> 11480b8fce94595f0560f06c621d3386364b233b
+
 @app.route("/predict", methods=['GET', 'POST'])
 
 def predict():
@@ -101,7 +100,7 @@ def predict():
         prediction = model.predict([[Present_Price, Kms_Driven2, Owner, Year, Fuel_Type_Diesel,
                                      Fuel_Type_Petrol, Seller_Type_Individual, Transmission_Mannual]])
         output = round(prediction[0], 2)
-<<<<<<< HEAD
+
         # d={}
         # d["output"]=str(output)
         # return jsonify(d)
@@ -109,7 +108,7 @@ def predict():
             return render_template('index.html', prediction_texts="Sorry you cannot sell this car")
         else:
             return render_template('index.html', prediction_text="You Can Sell The Car at {}".format(output))
-=======
+
         d={}
         d["output"]=str(output)
         return jsonify(d)
@@ -117,7 +116,7 @@ def predict():
         #     return render_template('index.html', prediction_texts="Sorry you cannot sell this car")
         # else:
         #     return render_template('index.html', prediction_text="You Can Sell The Car at {}".format(output))
->>>>>>> 11480b8fce94595f0560f06c621d3386364b233b
+
     else:
         return render_template('index.html')
 
